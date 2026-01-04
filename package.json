@@ -1,0 +1,25 @@
+{
+  "name": "travlr",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Ayjrin/CS465#readme",
+  "bugs": {
+    "url": "https://github.com/Ayjrin/CS465/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayjrin/CS465.git"
+  },
+  "license": "ISC",
+  "author": "Adrian Tull",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
