@@ -1,10 +1,25 @@
-var express = require('express');
-var path = require('path');
+let express = require('express');
+let path = require('path');
 
-var app = express();
+let indexRouter = require('./app_server/routes/index');
+//let usersRouter = require('./app_server/routes/users');
+let travelRouter = require('./app_server/routes/travel');
+let handlebars = require('hbs');
 
-// serve static files from public folder
+let app = express();
+
+app.set('views', path.join(__dirname, 'app_server', 'views'));
+handlebars.registerPartials(__dirname + '/app_server/views/partials');
+app.set('view engine', 'hbs');
+
+// serve static files from app_server/routes
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+//app.use('/users', usersRouter);
+app.use('/travel', travelRouter);
+
+
 
 // start server
 app.listen(3000, function() {
