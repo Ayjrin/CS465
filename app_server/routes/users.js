@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let contoller = require('../controllers/users');
+let controller = require('../controllers/users');
 
 router.get('/', controller.users);
 
