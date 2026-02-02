@@ -4,7 +4,10 @@ let path = require('path');
 let indexRouter = require('./app_server/routes/index');
 //let usersRouter = require('./app_server/routes/users');
 let travelRouter = require('./app_server/routes/travel');
+let apiRouter = require('./app_api/routes/index');
 let handlebars = require('hbs');
+
+require('./app_api/models/db');
 
 let app = express();
 
@@ -18,10 +21,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/travel', travelRouter);
+app.use('/api', apiRouter);
 
 
 
 // start server
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log('Server running on http://localhost:3000');
 });
